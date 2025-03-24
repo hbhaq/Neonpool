@@ -104,7 +104,6 @@ string confusion_matrix_cbf_mempool_entry(const string& tx_type, const string& t
         debug_falsepositives<<endl; */
 
     }
-    // copy_file("/home/cognet12/CLionProjects/expiry/100kdebug/debug_forensics.csv", string("/home/cognet12/CLionProjects/expiry/100kfp/fp"+ to_string(fp)+".csv"));
     if (shadow>0 && cbfmem==0) {
         fn_entry++;
         h_fn_entry++;
@@ -118,8 +117,6 @@ string confusion_matrix_cbf_mempool_entry(const string& tx_type, const string& t
             debug_falsenegatives <<*it<<",";
         }*/
         }
-        //   copy_file("/home/cognet12/CLionProjects/expiry/100kdebug/debug_forensics.csv", string("/home/cognet12/CLionProjects/expiry/100kfn/fn"+ to_string(fn)+".csv"));
-        cm_return="FN";
     }
 
     return cm_return;
@@ -153,7 +150,6 @@ string cm_return;
          debug_falsepositives<<endl; */
       
     }
-       // copy_file("/home/cognet12/CLionProjects/expiry/100kdebug/debug_forensics.csv", string("/home/cognet12/CLionProjects/expiry/100kfp/fp"+ to_string(fp)+".csv"));
     if (shadow>0 && cbfmem==0) {
         fn_exit++;
         h_fn_exit++;
@@ -161,8 +157,6 @@ string cm_return;
             fn_index_exit++;
             h_fn_index_exit++;
         }
-        //   copy_file("/home/cognet12/CLionProjects/expiry/100kdebug/debug_forensics.csv", string("/home/cognet12/CLionProjects/expiry/100kfn/fn"+ to_string(fn)+".csv"));
-        cm_return = "FN";
     }
       
     return cm_return;
@@ -203,7 +197,7 @@ string confusion_matrix_cbf_mempool_inventory(const string& tx_type, const strin
        inventory_positives.insert(make_pair(txid, inventory_time));
   //      debug_inventory_positives << txid << endl;
     }
-    // copy_file("/home/cognet12/CLionProjects/expiry/100kdebug/debug_forensics.csv", string("/home/cognet12/CLionProjects/expiry/100kfp/fp"+ to_string(fp)+".csv"));
+   
     if (shadow>0 && cbfmem==0) {
 
       //  if (get_data.count(txid) == 1) {
@@ -214,8 +208,7 @@ string confusion_matrix_cbf_mempool_inventory(const string& tx_type, const strin
 
         fn_inv++;
         h_fn_inv++;
-      
-        //   copy_file("/home/cognet12/CLionProjects/expiry/100kdebug/debug_forensics.csv", string("/home/cognet12/CLionProjects/expiry/100kfn/fn"+ to_string(fn)+".csv"));
+       
         cm_return="FN";
   if (inventory_negatives.count(txid) == 0) {
              unique_inventory_fn++;
@@ -295,8 +288,8 @@ int main() {
 
 //MEMPOOL REPLACEMENT ELEMENTS
 
-    ofstream debug_hourly ("/home/dell/CLionProjects/btc/bloompool/debug/debug_hourly.csv" );
-    ofstream debug_cumulative ("/home/dell/CLionProjects/btc/bloompool/debug/debug_cumulative.csv" );
+    ofstream debug_hourly ("pathtodebug/debug/debug_hourly.csv" );
+    ofstream debug_cumulative ("pathtodebug/debug/debug_cumulative.csv" );
   
     debug_cumulative << "hour"
                  << "," <<"inventory_time"
@@ -440,7 +433,7 @@ int main() {
     }*/
 
     fstream newfile;
-    string file_inv = string("/home/dell/CLionProjects/btc/btcdata/network/inventory/inventory.csv");
+    string file_inv = string("pathtodebug/inventory/inventory.csv");
     newfile.open(file_inv,ios::in); //open a file to perform read operation using file object
 
     string line, inv_type, inv_txhash;
@@ -456,8 +449,7 @@ int main() {
         for (int j = 1; j <= 183; j++) {
             // for (int j = 1; j <= 26; j++) {
 
-            string file_name = string("/home/dell/CLionProjects/btc/btcdata/mem/" + to_string(j + 71) + ".json");
-            // string file_name = string("/home/dell/CLionProjects/btc/btclogs2020/" + to_string(j) + ".json");
+            string file_name = string("pathtodebug/mem/" + to_string(j + 71) + ".json");
             cout << file_name << endl;
 
             ifstream ifs(file_name);
