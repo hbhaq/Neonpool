@@ -18,8 +18,8 @@ using namespace bf;
 //COUNTERS FOR SANITY CHECKING, DEBUGGING AND RESULTS CALCULATION
 int k=8, buckets=8000000, expiry_interval=12;
 
-ofstream debug_hourly ("/home/dell/CLionProjects/eth/neoneth/1MB12/debug/debug_hourly.csv" );
-ofstream debug_cumulative ("/home/dell/CLionProjects/eth/neoneth/1MB12/debug/debug_cumulative.csv" );
+ofstream debug_hourly ("/pathtodebug/debug/debug_hourly.csv" );
+ofstream debug_cumulative ("/pathtodebug/debug/debug_cumulative.csv" );
 
 int init=1, last_debug_time=0, last_expiry_time=0, last_clear_time=0, last_rotate_time=0, network_time=0, txpool_time=0;
 int hour=0, rbf_missed=0, rbf_replaced=0, total_rbf, tp=0, tn=0, fp=0, fn=0, fp_entry=0, fn_entry=0, tp_entry=0, tn_entry=0,
@@ -322,8 +322,8 @@ int main() {
 
     fstream entry;
     fstream exit;
-    string csv_entry = string("/home/dell/CLionProjects/eth/ethlogs/entry.csv");
-    string csv_exit = string("/home/dell/CLionProjects/eth/ethlogs/exit.csv");
+    string csv_entry = string("/pathtodata/entry.csv");
+    string csv_exit = string("/pathtodata/exit.csv");
     entry.open(csv_entry, ios::in); //open a file to perform read operation using file object
     exit.open(csv_exit, ios::in);
 
