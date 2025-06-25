@@ -1,7 +1,7 @@
 # README
 
 ## Overview
-This is the implementation for Reimagining cryptocurrency transaction pools for lightweight clients and IoT devices
+This is the implementation for Neonpool: Reimagining cryptocurrency transaction pools for lightweight clients and IoT devices
 
 The transaction pool plays a critical role in processing and disseminating transactions in cryptocurrency networks. However, increasing transaction loads strain the resources of full node deployments. We present Neonpool, an innovative transaction pool optimization using bloom filter variants, which reduces the memory footprint of the transaction pool to a fraction. Implemented in C++ and benchmarked using a unique Bitcoin and Ethereum dataset, our solution verifies and forwards transactions with over 99.99\% accuracy and does not necessitate a hard fork. Neonpool is ideally suited for lightweight cryptocurrency clients and for resource-constrained devices such as browsers, systems-on-a-chip, mobile or IoT devices. 
 
